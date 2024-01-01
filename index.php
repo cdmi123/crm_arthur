@@ -1,3 +1,31 @@
+<?php 
+
+include_once 'db.php';
+
+$sql_select_branch = "select * from branches";
+$b_data = mysqli_query($con,$sql_select_branch);
+
+  if (isset($_POST['login'])) {
+
+    $email = $_POST['email'];
+    $password = $_POST['password'];
+    $branch_id = $_POST['branch_id'];
+    
+      $login_user_query = "select * from admin where email='$email' and password='$password' and branch_id='$branch_id'";
+      $login_data = mysqli_query($con,$login_user_query);
+      $login_data_count = mysqli_num_rows($login_data);
+
+      if($login_data!=0)
+      {
+          $row = mysqli_fetch_assoc($login_data);
+          $_SESSION['login_user_id'] = $row['a_id'];
+          $_SESSION['login_user_name'] = $row['username'];
+          header('location:dashboard.php');
+      }
+
+  }
+
+ ?>
 <!DOCTYPE html>
 
 <html
@@ -13,7 +41,7 @@
       name="viewport"
       content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
 
-    <title>Login Basic - Pages | Sneat - Bootstrap 5 HTML Admin Template - Pro</title>
+    <title>Login </title>
 
     <meta name="description" content="" />
 
@@ -114,10 +142,10 @@
               </div>
               <!-- /Logo -->
               <h4 class="mb-2">Welcome to Sneat! 👋</h4>
-              <form id="formAuthentication" class="mb-3" action="index.html">
+              <form id="formAuthentication" class="mb-3" method="post">
                 <div class="mb-3">
                   <label for="email" class="form-label">Email</label>
-                  <input type="text" class="form-control" id="email" name="email-username" placeholder="Enter your email or username" autofocus />
+                  <input type="text" class="form-control" id="email" name="email" placeholder="Enter your email or username" autofocus />
                 </div>
                 <div class="mb-3 form-password-toggle">
                   <div class="d-flex justify-content-between">
@@ -128,9 +156,23 @@
                     <span class="input-group-text cursor-pointer"><i class="bx bx-hide"></i></span>
                   </div>
                 </div>
-                
+                 <div class="mb-3 form-password-toggle">
+                  <div class="d-flex justify-content-between">
+                    <label class="form-label" for="password">Select Branch</label>
+                  </div>
+                  <div class="input-group input-group-merge">
+                    
+                    <select class="form-control" name="branch_id">
+                      <option disabled selected>Select Branch</option>
+                        <?php while($b_row = mysqli_fetch_assoc($b_data)) { ?>
+                            <option value="<?php echo $b_row['b_id']; ?>"><?php echo $b_row['b_name']; ?></option>
+                        <?php } ?>
+                    </select>
+                    <span class="input-group-text cursor-pointer"><i class="bx bx-hide"></i></span>
+                  </div>
+                </div>
                 <div class="mb-3">
-                  <button class="btn btn-primary d-grid w-100" type="submit">Sign in</button>
+                  <button class="btn btn-primary d-grid w-100" type="submit" name="login">Sign in</button>
                 </div>
               </form>
             </div>
