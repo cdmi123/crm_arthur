@@ -15,7 +15,9 @@ $b_data = mysqli_query($con,$sql_select_branch);
       $login_data = mysqli_query($con,$login_user_query);
       $login_data_count = mysqli_num_rows($login_data);
 
-      if($login_data!=0)
+      // echo $login_data_count;
+
+      if($login_data_count!=0)
       {
           $row = mysqli_fetch_assoc($login_data);
           $_SESSION['login_user_id'] = $row['a_id'];

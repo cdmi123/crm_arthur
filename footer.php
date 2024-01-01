@@ -7,7 +7,7 @@
                     document.write(new Date().getFullYear());
                   </script>
                   , made with ❤️ by
-                  <a href="https://themeselection.com" target="_blank" class="footer-link fw-medium">ThemeSelection</a>
+                  <a href="#" target="_blank" class="footer-link fw-medium">ThemeSelection</a>
                 </div>
               </div>
             </footer>
