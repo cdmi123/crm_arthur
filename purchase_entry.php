@@ -8,144 +8,132 @@
                 <div class="col-xxl">
                   <div class="card mb-4">
                     <div class="card-header d-flex align-items-center justify-content-between">
-                      <h5 class="mb-0">Basic Layout</h5>
-                      <small class="text-muted float-end">Default label</small>
+                      <h4 class="mb-0">Purchase Entry</h4>
+                      <!-- <small class="text-muted float-end">Default label</small> -->
                     </div>
                     <div class="card-body">
                       <form method="post">
-                        <div class="row mb-3">
-                          <label class="col-sm-2 col-form-label" for="basic-default-name">supplier</label>
-                          <div class="col-sm-10">
-                            <input type="text" class="form-control" placeholder="John Doe" />
+                        <div class="row">
+                          <div class="col-12 mb-3">
+                            <label class="form-label">Supplier</label>
+                            <input type="text" class="form-control" placeholder="Supplier">
                           </div>
-                        </div>
-                        <div class="row mb-3">
-                          <label class="col-sm-2 col-form-label" for="basic-default-name">Reg. Type</label>
-                          <div class="col-sm-10">
-                            <input type="text" class="form-control" placeholder="John Doe" />
+                          <div class="col-sm-6 mb-3">
+                            <label class="form-label">Reg. Type</label>
+                            <input type="text" class="form-control" placeholder="Reg. Type">
                           </div>
-                        </div>
-                        <div class="row mb-3">
-                          <label class="col-sm-2 col-form-label" for="basic-default-name">state</label>
-                          <div class="col-sm-10">
-                            <input type="text" class="form-control" placeholder="John Doe" />
+                          <div class="col-sm-6 mb-3">
+                            <label class="form-label">State</label>
+                            <input type="text" class="form-control" placeholder="State">
                           </div>
-                        </div>
-                        <div class="row mb-3">
-                          <label class="col-sm-2 col-form-label" for="basic-default-name">GST NO</label>
-                          <div class="col-sm-10">
-                            <input type="text" class="form-control" placeholder="John Doe" />
+                          <div class="col-sm-8 mb-3">
+                            <label class="form-label">GST No.</label>
+                            <input type="text" class="form-control" placeholder="GST No.">
                           </div>
-                        </div>
-                        <div class="row mb-3">
-                          <label class="col-sm-2 col-form-label" for="basic-default-name">Purchase Date</label>
-                          <div class="col-sm-10">
-                            <input type="text" class="form-control" placeholder="John Doe" />
+                          <div class="col-sm-4 mb-3 pt-4 d-flex flex-wrap align-items-center justify-content-start">
+                            <div class="form-check me-3">
+                              <input class="form-check-input" type="checkbox" value="" id="rcm">
+                              <label class="form-check-label" for="rcm"> RCM</label>
+                            </div>
+                            <div class="form-check">
+                              <input class="form-check-input" type="checkbox" value="" id="credit">
+                              <label class="form-check-label" for="credit"> Credit Applicable</label>
+                            </div>
                           </div>
-                        </div>
-                        <div class="row mb-3">
-                          <label class="col-sm-2 col-form-label" for="basic-default-name">Purchase Type</label>
-                          <div class="col-sm-10">
-                            <input type="text" class="form-control" placeholder="John Doe" />
+                          <div class="col-sm-6 mb-3">
+                            <label class="form-label">Purchase Date</label>
+                            <input type="date" class="form-control" placeholder="Purchase Date">
                           </div>
-                        </div>
-                        <div class="row mb-3">
-                          <label class="col-sm-2 col-form-label" for="basic-default-name">Bill No</label>
-                          <div class="col-sm-10">
-                            <input type="text" class="form-control" placeholder="John Doe" />
+                          <div class="col-sm-6 mb-3">
+                            <label class="form-label">Purchase Type</label>
+                            <select class="form-select">
+                              <option selected="">Credit</option>
+                              <option value="1">One</option>
+                              <option value="2">Two</option>
+                              <option value="3">Three</option>
+                            </select>
                           </div>
-                        </div>
-                        <div class="row mb-3">
-                          <label class="col-sm-2 col-form-label" for="basic-default-name">Due Days</label>
-                          <div class="col-sm-10">
-                            <input type="text" class="form-control" placeholder="John Doe" />
+                          <div class="col-sm-6 mb-3">
+                            <label class="form-label">Bill No.</label>
+                            <input type="text" class="form-control" placeholder="Bill No.">
                           </div>
-                        </div>
-                        <div class="row mb-3">
-                          <label class="col-sm-2 col-form-label" for="basic-default-name"> Challan no</label>
-                          <div class="col-sm-10">
-                            <input type="text" class="form-control" placeholder="John Doe" />
+                          <div class="col-sm-6 mb-3">
+                            <label class="form-label">Due Days</label>
+                            <input type="date" class="form-control" placeholder="Due Days">
                           </div>
-                        </div>
-                        <div class="row mb-3">
-                          <label class="col-sm-2 col-form-label" for="basic-default-name"> Invoice Type</label>
-                          <div class="col-sm-10">
-                            <input type="text" class="form-control" placeholder="John Doe" />
+                          <div class="col-sm-6 mb-3">
+                            <label class="form-label">Challan No</label>
+                            <input type="text" class="form-control" placeholder="Challan No">
                           </div>
-                        </div>
-                         <div class="row mb-3">
-                          <label class="col-sm-2 col-form-label" for="basic-default-name"> Barcode</label>
-                          <div class="col-sm-10">
-                            <input type="text" class="form-control" placeholder="John Doe" />
+                          <div class="col-sm-6 mb-3">
+                            <label class="form-label">Invoice Type</label>
+                            <select class="form-select">
+                              <option selected="">Inventory Purchase</option>
+                              <option value="1">One</option>
+                              <option value="2">Two</option>
+                              <option value="3">Three</option>
+                            </select>
                           </div>
-                        </div> <div class="row mb-3">
-                          <label class="col-sm-2 col-form-label" for="basic-default-name"> Item Name</label>
-                          <div class="col-sm-10">
-                            <input type="text" class="form-control" placeholder="John Doe" />
+                          
+                          <hr class="mt-4 mb-4">
+
+                          <div class="col-sm-4 mb-3">
+                            <label class="form-label">Barcode</label>
+                            <input type="text" class="form-control" placeholder="Barcode">
                           </div>
-                        </div> <div class="row mb-3">
-                          <label class="col-sm-2 col-form-label" for="basic-default-name"> Design</label>
-                          <div class="col-sm-10">
-                            <input type="text" class="form-control" placeholder="John Doe" />
+                          <div class="col-sm-4 mb-3">
+                            <label class="form-label">Item Name</label>
+                            <input type="text" class="form-control" placeholder="Item Name">
                           </div>
-                        </div> <div class="row mb-3">
-                          <label class="col-sm-2 col-form-label" for="basic-default-name"> S - Size </label>
-                          <div class="col-sm-10">
-                            <input type="text" class="form-control" placeholder="John Doe" />
+                          <div class="col-sm-4 mb-3">
+                            <label class="form-label">Design</label>
+                            <input type="text" class="form-control" placeholder="Design">
                           </div>
-                        </div> <div class="row mb-3">
-                          <label class="col-sm-2 col-form-label" for="basic-default-name"> E - Size </label>
-                          <div class="col-sm-10">
-                            <input type="text" class="form-control" placeholder="John Doe" />
+                          <div class="col-sm-4 mb-3">
+                            <label class="form-label">S - Size</label>
+                            <input type="text" class="form-control" placeholder="Start Size">
                           </div>
-                        </div> <div class="row mb-3">
-                          <label class="col-sm-2 col-form-label" for="basic-default-name"> Color </label>
-                          <div class="col-sm-10">
-                            <input type="text" class="form-control" placeholder="John Doe" />
+                          <div class="col-sm-4 mb-3">
+                            <label class="form-label">E - Size</label>
+                            <input type="text" class="form-control" placeholder="End Size">
                           </div>
-                        </div> <div class="row mb-3">
-                          <label class="col-sm-2 col-form-label" for="basic-default-name"> Qty </label>
-                          <div class="col-sm-10">
-                            <input type="text" class="form-control" placeholder="John Doe" />
+                          <div class="col-sm-4 mb-3">
+                            <label class="form-label">Color</label>
+                            <input type="text" class="form-control" placeholder="Color">
                           </div>
-                        </div> <div class="row mb-3">
-                          <label class="col-sm-2 col-form-label" for="basic-default-name"> Rate </label>
-                          <div class="col-sm-10">
-                            <input type="text" class="form-control" placeholder="John Doe" />
+                          <div class="col-sm-4 mb-3">
+                            <label class="form-label">Qty</label>
+                            <input type="text" class="form-control" placeholder="Qty">
                           </div>
-                        </div> <div class="row mb-3">
-                          <label class="col-sm-2 col-form-label" for="basic-default-name"> MRP </label>
-                          <div class="col-sm-10">
-                            <input type="text" class="form-control" placeholder="John Doe" />
+                          <div class="col-sm-4 mb-3">
+                            <label class="form-label">Rate</label>
+                            <input type="text" class="form-control" placeholder="Rate">
                           </div>
-                        </div> <div class="row mb-3">
-                          <label class="col-sm-2 col-form-label" for="basic-default-name"> Dis %</label>
-                          <div class="col-sm-10">
-                            <input type="text" class="form-control" placeholder="John Doe" />
+                          <div class="col-sm-4 mb-3">
+                            <label class="form-label">MRP</label>
+                            <input type="text" class="form-control" placeholder="MRP">
                           </div>
-                        </div> <div class="row mb-3">
-                          <label class="col-sm-2 col-form-label" for="basic-default-name">Sell </label>
-                          <div class="col-sm-10">
-                            <input type="text" class="form-control" placeholder="John Doe" />
+                          <div class="col-sm-4 mb-3">
+                            <label class="form-label">Discount (%)</label>
+                            <input type="text" class="form-control" placeholder="Discount">
                           </div>
-                        </div> <div class="row mb-3">
-                          <label class="col-sm-2 col-form-label" for="basic-default-name"> W.Rate</label>
-                          <div class="col-sm-10">
-                            <input type="text" class="form-control" placeholder="John Doe" />
+                          <div class="col-sm-4 mb-3">
+                            <label class="form-label">Sell</label>
+                            <input type="text" class="form-control" placeholder="Sell">
                           </div>
-                        </div> <div class="row mb-3">
-                          <label class="col-sm-2 col-form-label" for="basic-default-name"> Amount </label>
-                          <div class="col-sm-10">
-                            <input type="text" class="form-control" placeholder="John Doe" />
+                          <div class="col-sm-4 mb-3">
+                            <label class="form-label">W. Rate</label>
+                            <input type="text" class="form-control" placeholder="W. Rate">
                           </div>
-                        </div> <div class="row mb-3">
-                          <label class="col-sm-2 col-form-label" for="basic-default-name"> SGST %</label>
-                          <div class="col-sm-10">
-                            <input type="text" class="form-control" placeholder="John Doe" />
+                          <div class="col-sm-6 mb-3">
+                            <label class="form-label">Amount</label>
+                            <input type="text" class="form-control" placeholder="Amount">
                           </div>
-                        </div>
-                        <div class="row justify-content-end">
-                          <div class="col-sm-10">
+                          <div class="col-sm-6 mb-3">
+                            <label class="form-label">SGST (%)</label>
+                            <input type="text" class="form-control" placeholder="SGST">
+                          </div>
+                          <div class="col-12 text-center">
                             <button type="submit" class="btn btn-primary">Send</button>
                           </div>
                         </div>
