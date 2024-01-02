@@ -12,60 +12,136 @@
                       <small class="text-muted float-end">Default label</small>
                     </div>
                     <div class="card-body">
-                      <form>
+                      <form method="post">
                         <div class="row mb-3">
-                          <label class="col-sm-2 col-form-label" for="basic-default-name">Name</label>
+                          <label class="col-sm-2 col-form-label" for="basic-default-name">supplier</label>
                           <div class="col-sm-10">
-                            <input type="text" class="form-control" id="basic-default-name" placeholder="John Doe" />
+                            <input type="text" class="form-control" placeholder="John Doe" />
                           </div>
                         </div>
                         <div class="row mb-3">
-                          <label class="col-sm-2 col-form-label" for="basic-default-company">Company</label>
+                          <label class="col-sm-2 col-form-label" for="basic-default-name">Reg. Type</label>
                           <div class="col-sm-10">
-                            <input
-                              type="text"
-                              class="form-control"
-                              id="basic-default-company"
-                              placeholder="ACME Inc." />
+                            <input type="text" class="form-control" placeholder="John Doe" />
                           </div>
                         </div>
                         <div class="row mb-3">
-                          <label class="col-sm-2 col-form-label" for="basic-default-email">Email</label>
+                          <label class="col-sm-2 col-form-label" for="basic-default-name">state</label>
                           <div class="col-sm-10">
-                            <div class="input-group input-group-merge">
-                              <input
-                                type="text"
-                                id="basic-default-email"
-                                class="form-control"
-                                placeholder="john.doe"
-                                aria-label="john.doe"
-                                aria-describedby="basic-default-email2" />
-                              <span class="input-group-text" id="basic-default-email2">@example.com</span>
-                            </div>
-                            <div class="form-text">You can use letters, numbers & periods</div>
+                            <input type="text" class="form-control" placeholder="John Doe" />
                           </div>
                         </div>
                         <div class="row mb-3">
-                          <label class="col-sm-2 col-form-label" for="basic-default-phone">Phone No</label>
+                          <label class="col-sm-2 col-form-label" for="basic-default-name">GST NO</label>
                           <div class="col-sm-10">
-                            <input
-                              type="text"
-                              id="basic-default-phone"
-                              class="form-control phone-mask"
-                              placeholder="658 799 8941"
-                              aria-label="658 799 8941"
-                              aria-describedby="basic-default-phone" />
+                            <input type="text" class="form-control" placeholder="John Doe" />
                           </div>
                         </div>
                         <div class="row mb-3">
-                          <label class="col-sm-2 col-form-label" for="basic-default-message">Message</label>
+                          <label class="col-sm-2 col-form-label" for="basic-default-name">Purchase Date</label>
                           <div class="col-sm-10">
-                            <textarea
-                              id="basic-default-message"
-                              class="form-control"
-                              placeholder="Hi, Do you have a moment to talk Joe?"
-                              aria-label="Hi, Do you have a moment to talk Joe?"
-                              aria-describedby="basic-icon-default-message2"></textarea>
+                            <input type="text" class="form-control" placeholder="John Doe" />
+                          </div>
+                        </div>
+                        <div class="row mb-3">
+                          <label class="col-sm-2 col-form-label" for="basic-default-name">Purchase Type</label>
+                          <div class="col-sm-10">
+                            <input type="text" class="form-control" placeholder="John Doe" />
+                          </div>
+                        </div>
+                        <div class="row mb-3">
+                          <label class="col-sm-2 col-form-label" for="basic-default-name">Bill No</label>
+                          <div class="col-sm-10">
+                            <input type="text" class="form-control" placeholder="John Doe" />
+                          </div>
+                        </div>
+                        <div class="row mb-3">
+                          <label class="col-sm-2 col-form-label" for="basic-default-name">Due Days</label>
+                          <div class="col-sm-10">
+                            <input type="text" class="form-control" placeholder="John Doe" />
+                          </div>
+                        </div>
+                        <div class="row mb-3">
+                          <label class="col-sm-2 col-form-label" for="basic-default-name"> Challan no</label>
+                          <div class="col-sm-10">
+                            <input type="text" class="form-control" placeholder="John Doe" />
+                          </div>
+                        </div>
+                        <div class="row mb-3">
+                          <label class="col-sm-2 col-form-label" for="basic-default-name"> Invoice Type</label>
+                          <div class="col-sm-10">
+                            <input type="text" class="form-control" placeholder="John Doe" />
+                          </div>
+                        </div>
+                         <div class="row mb-3">
+                          <label class="col-sm-2 col-form-label" for="basic-default-name"> Barcode</label>
+                          <div class="col-sm-10">
+                            <input type="text" class="form-control" placeholder="John Doe" />
+                          </div>
+                        </div> <div class="row mb-3">
+                          <label class="col-sm-2 col-form-label" for="basic-default-name"> Item Name</label>
+                          <div class="col-sm-10">
+                            <input type="text" class="form-control" placeholder="John Doe" />
+                          </div>
+                        </div> <div class="row mb-3">
+                          <label class="col-sm-2 col-form-label" for="basic-default-name"> Design</label>
+                          <div class="col-sm-10">
+                            <input type="text" class="form-control" placeholder="John Doe" />
+                          </div>
+                        </div> <div class="row mb-3">
+                          <label class="col-sm-2 col-form-label" for="basic-default-name"> S - Size </label>
+                          <div class="col-sm-10">
+                            <input type="text" class="form-control" placeholder="John Doe" />
+                          </div>
+                        </div> <div class="row mb-3">
+                          <label class="col-sm-2 col-form-label" for="basic-default-name"> E - Size </label>
+                          <div class="col-sm-10">
+                            <input type="text" class="form-control" placeholder="John Doe" />
+                          </div>
+                        </div> <div class="row mb-3">
+                          <label class="col-sm-2 col-form-label" for="basic-default-name"> Color </label>
+                          <div class="col-sm-10">
+                            <input type="text" class="form-control" placeholder="John Doe" />
+                          </div>
+                        </div> <div class="row mb-3">
+                          <label class="col-sm-2 col-form-label" for="basic-default-name"> Qty </label>
+                          <div class="col-sm-10">
+                            <input type="text" class="form-control" placeholder="John Doe" />
+                          </div>
+                        </div> <div class="row mb-3">
+                          <label class="col-sm-2 col-form-label" for="basic-default-name"> Rate </label>
+                          <div class="col-sm-10">
+                            <input type="text" class="form-control" placeholder="John Doe" />
+                          </div>
+                        </div> <div class="row mb-3">
+                          <label class="col-sm-2 col-form-label" for="basic-default-name"> MRP </label>
+                          <div class="col-sm-10">
+                            <input type="text" class="form-control" placeholder="John Doe" />
+                          </div>
+                        </div> <div class="row mb-3">
+                          <label class="col-sm-2 col-form-label" for="basic-default-name"> Dis %</label>
+                          <div class="col-sm-10">
+                            <input type="text" class="form-control" placeholder="John Doe" />
+                          </div>
+                        </div> <div class="row mb-3">
+                          <label class="col-sm-2 col-form-label" for="basic-default-name">Sell </label>
+                          <div class="col-sm-10">
+                            <input type="text" class="form-control" placeholder="John Doe" />
+                          </div>
+                        </div> <div class="row mb-3">
+                          <label class="col-sm-2 col-form-label" for="basic-default-name"> W.Rate</label>
+                          <div class="col-sm-10">
+                            <input type="text" class="form-control" placeholder="John Doe" />
+                          </div>
+                        </div> <div class="row mb-3">
+                          <label class="col-sm-2 col-form-label" for="basic-default-name"> Amount </label>
+                          <div class="col-sm-10">
+                            <input type="text" class="form-control" placeholder="John Doe" />
+                          </div>
+                        </div> <div class="row mb-3">
+                          <label class="col-sm-2 col-form-label" for="basic-default-name"> SGST %</label>
+                          <div class="col-sm-10">
+                            <input type="text" class="form-control" placeholder="John Doe" />
                           </div>
                         </div>
                         <div class="row justify-content-end">
