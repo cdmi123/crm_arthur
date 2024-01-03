@@ -1,4 +1,14 @@
-<?php include_once 'header.php'; ?>
+<?php include_once 'header.php'; 
+
+function get_size($con)
+{
+    $sql_select_size = "select * from size";
+    $sql_data = mysqli_query($con,$sql_select_size);
+
+    return $sql_data;
+}
+
+?>
 
  <div class="container-xxl flex-grow-1 container-p-y">
 
@@ -12,7 +22,7 @@
                       <!-- <small class="text-muted float-end">Default label</small> -->
                     </div>
                     <div class="card-body">
-                      <form method="post">
+                      <form method="post" id="purchase_form">
                         <div class="row">
                           <div class="col-12 mb-3">
                             <label class="form-label">Supplier</label>
@@ -89,13 +99,25 @@
                             <label class="form-label">Design</label>
                             <input type="text" class="form-control" placeholder="Design">
                           </div>
+                          <?php $data = get_size($con); ?>
                           <div class="col-sm-4 mb-3">
                             <label class="form-label">S - Size</label>
-                            <input type="text" class="form-control" placeholder="Start Size">
+                            <select class="form-control" name="s_size">
+                              <option disabled selected>Select Size</option>
+                              <?php while($row = mysqli_fetch_assoc($data)) { ?>
+                                <option value="<?php echo $row['size_id']; ?>"><?php echo $row['s_name']; ?></option>
+                              <?php } ?>
+                            </select>
                           </div>
+                          <?php $data = get_size($con); ?>
                           <div class="col-sm-4 mb-3">
                             <label class="form-label">E - Size</label>
-                            <input type="text" class="form-control" placeholder="End Size">
+                            <select class="form-control" name="e_size">
+                              <option disabled selected>Select Size</option>
+                              <?php while($row = mysqli_fetch_assoc($data)) { ?>
+                                <option value="<?php echo $row['size_id']; ?>"><?php echo $row['s_name']; ?></option>
+                              <?php } ?>
+                            </select>
                           </div>
                           <div class="col-sm-4 mb-3">
                             <label class="form-label">Color</label>
@@ -136,6 +158,7 @@
                           <div class="col-12 text-center">
                             <button type="submit" class="btn btn-primary">Send</button>
                           </div>
+
                         </div>
                       </form>
                     </div>
@@ -144,4 +167,36 @@
               </div>
             </div>
 
+<!-- ajax panel -->
+
+              <div class="row" id="purchase_data">
+               
+
+                     
+              </div>
+
+
 <?php include_once 'footer.php'; ?>
+
+<script type="text/javascript">
+  $(document).ready(function(){
+    $('#purchase_form').submit(function(e){
+        e.preventDefault();
+
+        var form_data = $('#purchase_form').serialize();
+
+        $.ajax({
+          type:"post",
+          url:"add_purchase_ajax.php",
+          data:form_data,
+
+            success:function(res){
+              $('#purchase_data').html(res);
+            }
+        })
+
+
+    })
+  })
+</script>
+
