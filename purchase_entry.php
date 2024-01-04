@@ -10,7 +10,7 @@ function get_size($con)
 
 ?>
 
- <div class="container-xxl flex-grow-1 container-p-y">
+            <div class="container-xxl flex-grow-1 container-p-y">
 
               <!-- Basic Layout & Basic with Icons -->
               <div class="row">
@@ -169,11 +169,12 @@ function get_size($con)
 
 <!-- ajax panel -->
 
-              <div class="row" id="purchase_data">
-               
 
-                     
-              </div>
+
+                  <div class="row" id="purchase_data">    
+                  </div>
+
+                
 
 
 <?php include_once 'footer.php'; ?>
