@@ -89,15 +89,15 @@ function get_size($con)
 
                           <div class="col-sm-4 mb-3">
                             <label class="form-label">Barcode</label>
-                            <input type="text" class="form-control" placeholder="Barcode">
+                            <input type="text" class="form-control" placeholder="Barcode" name="barcode">
                           </div>
                           <div class="col-sm-4 mb-3">
                             <label class="form-label">Item Name</label>
-                            <input type="text" class="form-control" placeholder="Item Name">
+                            <input type="text" class="form-control" placeholder="Item Name" name="item_name">
                           </div>
                           <div class="col-sm-4 mb-3">
                             <label class="form-label">Design</label>
-                            <input type="text" class="form-control" placeholder="Design">
+                            <input type="text" class="form-control" placeholder="Design" name="design">
                           </div>
                           <?php $data = get_size($con); ?>
                           <div class="col-sm-4 mb-3">
@@ -121,39 +121,39 @@ function get_size($con)
                           </div>
                           <div class="col-sm-4 mb-3">
                             <label class="form-label">Color</label>
-                            <input type="text" class="form-control" placeholder="Color">
+                            <input type="text" class="form-control" placeholder="Color" name="color">
                           </div>
                           <div class="col-sm-4 mb-3">
                             <label class="form-label">Qty</label>
-                            <input type="text" class="form-control" placeholder="Qty">
+                            <input type="text" class="form-control" placeholder="Qty" name="qty">
                           </div>
                           <div class="col-sm-4 mb-3">
                             <label class="form-label">Rate</label>
-                            <input type="text" class="form-control" placeholder="Rate">
+                            <input type="text" class="form-control" placeholder="Rate" name="rate">
                           </div>
                           <div class="col-sm-4 mb-3">
                             <label class="form-label">MRP</label>
-                            <input type="text" class="form-control" placeholder="MRP">
+                            <input type="text" class="form-control" placeholder="MRP" name="mrp">
                           </div>
                           <div class="col-sm-4 mb-3">
                             <label class="form-label">Discount (%)</label>
-                            <input type="text" class="form-control" placeholder="Discount">
+                            <input type="text" class="form-control" placeholder="Discount" name="discount">
                           </div>
                           <div class="col-sm-4 mb-3">
                             <label class="form-label">Sell</label>
-                            <input type="text" class="form-control" placeholder="Sell">
+                            <input type="text" class="form-control" placeholder="Sell" name="sell">
                           </div>
                           <div class="col-sm-4 mb-3">
                             <label class="form-label">W. Rate</label>
-                            <input type="text" class="form-control" placeholder="W. Rate">
+                            <input type="text" class="form-control" placeholder="W. Rate" name="wrate">
                           </div>
                           <div class="col-sm-6 mb-3">
                             <label class="form-label">Amount</label>
-                            <input type="text" class="form-control" placeholder="Amount">
+                            <input type="text" class="form-control" placeholder="Amount" name="amount">
                           </div>
                           <div class="col-sm-6 mb-3">
                             <label class="form-label">SGST (%)</label>
-                            <input type="text" class="form-control" placeholder="SGST">
+                            <input type="text" class="form-control" placeholder="SGST" name="sgst">
                           </div>
                           <div class="col-12 text-center">
                             <button type="submit" class="btn btn-primary">Send</button>
