@@ -139,7 +139,7 @@
                 </li>
               </ul>
             </li>
-             <li class="menu-item">
+            <li class="menu-item">
               <a href="javascript:void(0);" class="menu-link menu-toggle">
                 <i class="menu-icon tf-icons bx bx-layout"></i>
                 <div data-i18n="Layouts">Stock Manage</div>
@@ -149,6 +149,32 @@
                 <li class="menu-item">
                   <a href="add_stock.php" class="menu-link">
                     <div data-i18n="Without menu">Add Stock</div>
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li class="menu-item">
+              <a href="javascript:void(0);" class="menu-link menu-toggle">
+                <i class="menu-icon tf-icons bx bx-layout"></i>
+                <div data-i18n="Layouts">Purchase</div>
+              </a>
+              <ul class="menu-sub">
+                <li class="menu-item">
+                  <a href="add_stock.php" class="menu-link">
+                    <div data-i18n="Without menu">Purchase stock</div>
+                  </a>
+                </li>
+              </ul>
+            </li>
+             <li class="menu-item">
+              <a href="javascript:void(0);" class="menu-link menu-toggle">
+                <i class="menu-icon tf-icons bx bx-layout"></i>
+                <div data-i18n="Layouts">Sale</div>
+              </a>
+              <ul class="menu-sub">
+                <li class="menu-item">
+                  <a href="point_of_sale.php" class="menu-link">
+                    <div data-i18n="Without menu">Sale stock</div>
                   </a>
                 </li>
               </ul>
