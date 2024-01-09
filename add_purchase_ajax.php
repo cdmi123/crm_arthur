@@ -7,6 +7,7 @@
                         $chksum = 104;
                         // Must not change order of array elements as the checksum depends on the array's key to validate final code
                         $code_array = array(" "=>"212222","!"=>"222122","\""=>"222221","#"=>"121223","$"=>"121322","%"=>"131222","&"=>"122213","'"=>"122312","("=>"132212",")"=>"221213","*"=>"221312","+"=>"231212",","=>"112232","-"=>"122132","."=>"122231","/"=>"113222","0"=>"123122","1"=>"123221","2"=>"223211","3"=>"221132","4"=>"221231","5"=>"213212","6"=>"223112","7"=>"312131","8"=>"311222","9"=>"321122",":"=>"321221",";"=>"312212","<"=>"322112","="=>"322211",">"=>"212123","?"=>"212321","@"=>"232121","A"=>"111323","B"=>"131123","C"=>"131321","D"=>"112313","E"=>"132113","F"=>"132311","G"=>"211313","H"=>"231113","I"=>"231311","J"=>"112133","K"=>"112331","L"=>"132131","M"=>"113123","N"=>"113321","O"=>"133121","P"=>"313121","Q"=>"211331","R"=>"231131","S"=>"213113","T"=>"213311","U"=>"213131","V"=>"311123","W"=>"311321","X"=>"331121","Y"=>"312113","Z"=>"312311","["=>"332111","\\"=>"314111","]"=>"221411","^"=>"431111","_"=>"111224","\`"=>"111422","a"=>"121124","b"=>"121421","c"=>"141122","d"=>"141221","e"=>"112214","f"=>"112412","g"=>"122114","h"=>"122411","i"=>"142112","j"=>"142211","k"=>"241211","l"=>"221114","m"=>"413111","n"=>"241112","o"=>"134111","p"=>"111242","q"=>"121142","r"=>"121241","s"=>"114212","t"=>"124112","u"=>"124211","v"=>"411212","w"=>"421112","x"=>"421211","y"=>"212141","z"=>"214121","{"=>"412121","|"=>"111143","}"=>"111341","~"=>"131141","DEL"=>"114113","FNC 3"=>"114311","FNC 2"=>"411113","SHIFT"=>"411311","CODE C"=>"113141","FNC 4"=>"114131","CODE A"=>"311141","FNC 1"=>"411131","Start A"=>"211412","Start B"=>"211214","Start C"=>"211232","Stop"=>"2331112");
+
                         $code_keys = array_keys($code_array);
                         $code_values = array_flip($code_keys);
                         for ( $X = 1; $X <= strlen($text); $X++ ) {
@@ -17,6 +18,7 @@
                         $code_string .= $code_array[$code_keys[($chksum - (intval($chksum / 103) * 103))]];
 
                         $code_string = "211214" . $code_string . "2331112";
+
                     } elseif ( strtolower($code_type) == "code128a" ) {
                         $chksum = 103;
                         $text = strtoupper($text); // Code 128A doesn't support lower case
@@ -141,20 +143,34 @@ class size_class
 	}
 }
 
-$s_size = $_POST['s_size'];
-$e_size = $_POST['e_size'];
-$barcode = $_POST['e_size'];
-$item_name = $_POST['e_size'];
-$design = $_POST['e_size'];
-$color = $_POST['e_size'];
-$qty = $_POST['e_size'];
-$rate = $_POST['e_size'];
-$mrp = $_POST['e_size'];
-$discount = $_POST['e_size'];
-$sell = $_POST['e_size'];
-$wrate = $_POST['e_size'];
-$amount= $_POST['e_size'];
-$sgst= $_POST['sgst'];
+$s_size = $_POST['s_size_s'];
+$e_size = $_POST['e_size_s'];
+$barcode = $_POST['barcode_generate'];
+$item_name = $_POST['item_name_s'];
+$design = $_POST['design_s'];
+$color = $_POST['color_s'];
+$qty = $_POST['qty_s'];
+$rate = $_POST['rate_s'];
+$mrp = $_POST['mrp_s'];
+$discount = $_POST['discount_s'];
+$sell = $_POST['sell_s'];
+$wrate = $_POST['wrate_s'];
+$amount= $_POST['amount_s'];
+$sgst= $_POST['sgst_s'];
+$branch_id= $_POST['branch_id_s'];
+
+  $supplier= $_POST['supplier'];
+  $regtype= $_POST['regtype'];
+  $state= $_POST['state'];
+  $gst= $_POST['gst'];
+  $rcm= $_POST['rcm'];
+  $rcm= $_POST['ca'];
+  $purchase_date= $_POST['purchase_date'];
+  $bill_no= $_POST['bill_no'];
+  $due_days= $_POST['due_days'];
+  $challan_no= $_POST['challan_no'];
+  $invoice_type= $_POST['invoice_type'];
+  $purchase_type= $_POST['purchase_type'];
 
 $select_size = new size_class();
 $size_data = $select_size->get_size_record($con,$s_size,$e_size); ?>
@@ -163,86 +179,104 @@ $size_data = $select_size->get_size_record($con,$s_size,$e_size); ?>
         <div class="col-xxl">
             <div class="card mb-4">
                 <div class="card-body">
-                    <form method="post">
+                     <form method="post">
                         <div class="row">
+
+                            <input type="hidden"  name="supplier"  value="<?php echo $supplier; ?> ">
+                            <input type="hidden"  name="regtype" value="<?php echo  $regtype; ?> ">
+                            <input type="hidden"  name="state" value="<?php echo  $state; ?> ">
+                            <input type="hidden"  name="gst" value="<?php echo  $gst; ?> ">
+                            <input type="hidden"  name="rcm" value="<?php echo  $rcm; ?> "> 
+                            <input type="hidden"  name="ca" value="<?php echo  $ca; ?> ">
+                            <input type="hidden"  name="purchase_date" value="<?php echo $purchase_date; ?> ">
+                            <input type="hidden"  name="purchase_type" value="<?php echo $purchase_type; ?> ">
+                            <input type="hidden"  name="bill_no" value="<?php echo $bill_no; ?> ">
+                            <input type="hidden"  name="due_days" value="<?php echo $due_days; ?> ">
+                            <input type="hidden"  name="challan_no" value="<?php echo $challan_no; ?> ">
+                            <input type="hidden"  name="invoice_type" value="<?php echo $invoice_type; ?> ">
+
+
                             <?php while($row = mysqli_fetch_assoc($size_data)) { 
 
-
-                $text = $design;
+                $text = $design.'-'.$branch_id.'-'.$row['s_name'];
                 $size = 30;
                 $orientation = "horizontal";
                 $code_type = "code128";
                 $print = true;
                 $sizefactor = 1;
-                $filepath = "image/".$design.'-'.$row['s_name'].'.png';
-
-                    
+                $filepath = "image/".$design.'-'.$row['s_name'].'-'.$branch_id.'.png';
 
                 barcode( $filepath, $text, $size, $orientation, $code_type, $print, $sizefactor );
 
                
 ?>
-
-
-
-                                
                                 <h4 class="text-center bg-light py-3 my-3">Size : <?php echo $row['s_name']; ?></h4>
                                 <div class="col-sm-4 mb-3">
 
                                     <label class="form-label">Barcode</label>
-                                    <input type="text" class="form-control" placeholder="Barcode" value="<?php echo $design.'-'.$row['s_name']; ?>">
+                                    <input type="text" class="form-control" placeholder="Barcode" name="barcode[]" value="<?php echo $design.'-'.$branch_id.'-'.$row['s_name']; ?>">
                                 </div>
                                 <div class="col-sm-4 mb-3">
                                     <label class="form-label">Item Name</label>
-                                    <input type="text" class="form-control" placeholder="Item Name">
+                                    <input type="text" class="form-control" placeholder="Item Name" name="item_name[]" value="<?php echo $item_name; ?>">
                                 </div>
                                 <div class="col-sm-4 mb-3">
                                     <label class="form-label">Design</label>
-                                    <input type="text" class="form-control" placeholder="Design">
+                                    <input type="text" class="form-control" placeholder="Design" name="design[]" value="<?php echo $design; ?>">
                                 </div>
                                 <div class="col-sm-4 mb-3">
                                     <label class="form-label">Size</label>
-                                    <input type="text" class="form-control" placeholder="Design" value="<?php echo $row['s_name']; ?>">
+                                    <input type="text" class="form-control" placeholder="Size" name="size[]" value="<?php echo $row['s_name']; ?>">
                                 </div>
                                 <div class="col-sm-4 mb-3">
                                     <label class="form-label">Color</label>
-                                    <input type="text" class="form-control" placeholder="Color">
+                                    <input type="text" class="form-control" placeholder="Color" name="color[]" value="<?php echo $color; ?>">
                                 </div>
                                 <div class="col-sm-4 mb-3">
                                     <label class="form-label">Qty</label>
-                                    <input type="text" class="form-control" placeholder="Qty">
+                                    <input type="text" class="form-control" placeholder="Qty" name="qty[]" value="<?php echo $qty; ?>">
                                 </div>
                                 <div class="col-sm-4 mb-3">
                                     <label class="form-label">Rate</label>
-                                    <input type="text" class="form-control" placeholder="Rate">
+                                    <input type="text" class="form-control" placeholder="Rate" name="rate[]" value="<?php echo $rate; ?>">
                                 </div>
                                 <div class="col-sm-4 mb-3">
                                     <label class="form-label">MRP</label>
-                                    <input type="text" class="form-control" placeholder="MRP">
+                                    <input type="text" class="form-control" placeholder="MRP" name="mrp[]" value="<?php echo $mrp; ?>">
                                 </div>
                                 <div class="col-sm-4 mb-3">
                                     <label class="form-label">Discount (%)</label>
-                                    <input type="text" class="form-control" placeholder="Discount">
+                                    <input type="text" class="form-control" placeholder="Discount" name="discount[]" value="<?php echo $discount; ?>">
                                 </div>
                                 <div class="col-sm-6 mb-3">
                                     <label class="form-label">Sell</label>
-                                    <input type="text" class="form-control" placeholder="Sell">
+                                    <input type="text" class="form-control" placeholder="Sell" name="sell[]" value="<?php echo $sell; ?>">
                                 </div>
                                 <div class="col-sm-6 mb-3">
                                     <label class="form-label">W. Rate</label>
-                                    <input type="text" class="form-control" placeholder="W. Rate">
+                                    <input type="text" class="form-control" placeholder="W. Rate" name="wrate[]" value="wrate">
                                 </div>
                                 <div class="col-sm-6 mb-3">
                                     <label class="form-label">Amount</label>
-                                    <input type="text" class="form-control" placeholder="Amount">
+                                    <input type="text" class="form-control" placeholder="Amount" name="amount[]" value="<?php echo $amount; ?>">
                                 </div>
                                 <div class="col-sm-6 mb-3">
                                     <label class="form-label">SGST (%)</label>
-                                    <input type="text" class="form-control" placeholder="SGST">
+                                    <input type="text" class="form-control" placeholder="SGST" name="sgst[]" value="<?php echo $sgst; ?>">
+                                </div>
+                                <div class="col-sm-6 mb-3">
+                                    <label class="form-label">Branch</label>
+                                    <?php 
+                                        $branch = "select * from branches where b_id=$branch_id";
+                                        $sql_data = mysqli_query($con,$branch);
+                                        $row_brach = mysqli_fetch_assoc($sql_data);
+
+                                     ?>
+                                    <input type="text" class="form-control" name="branch_id[]" placeholder="SGST" value="<?php echo $row_brach['b_name']; ?>">
                                 </div>
                             <?php } ?>
                             <div class="col-12 text-center">
-                                    <button type="submit" class="btn btn-primary">Send</button>
+                                    <button type="submit" name="save_purchase" class="btn btn-primary">save</button>
                             </div>
                         </div>
                     </form>

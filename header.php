@@ -128,13 +128,27 @@
             <li class="menu-item">
               <a href="javascript:void(0);" class="menu-link menu-toggle">
                 <i class="menu-icon tf-icons bx bx-layout"></i>
-                <div data-i18n="Layouts">Layouts</div>
+                <div data-i18n="Layouts">Size Manage</div>
               </a>
 
               <ul class="menu-sub">
                 <li class="menu-item">
                   <a href="add_size.php" class="menu-link">
                     <div data-i18n="Without menu">Add size</div>
+                  </a>
+                </li>
+              </ul>
+            </li>
+             <li class="menu-item">
+              <a href="javascript:void(0);" class="menu-link menu-toggle">
+                <i class="menu-icon tf-icons bx bx-layout"></i>
+                <div data-i18n="Layouts">Stock Manage</div>
+              </a>
+
+              <ul class="menu-sub">
+                <li class="menu-item">
+                  <a href="add_stock.php" class="menu-link">
+                    <div data-i18n="Without menu">Add Stock</div>
                   </a>
                 </li>
               </ul>
