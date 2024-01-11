@@ -160,7 +160,7 @@
               </a>
               <ul class="menu-sub">
                 <li class="menu-item">
-                  <a href="add_stock.php" class="menu-link">
+                  <a href="purchase_entry.php" class="menu-link">
                     <div data-i18n="Without menu">Purchase stock</div>
                   </a>
                 </li>
