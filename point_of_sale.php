@@ -1,4 +1,14 @@
-<?php include_once 'header.php'; $today_date = date("Y-m-d"); ?>
+<?php include_once 'header.php'; $today_date = date("Y-m-d"); 
+
+function get_branch($con)
+{
+    $sql_select_size = "select * from branches";
+    $sql_data = mysqli_query($con,$sql_select_size);
+
+    return $sql_data;
+}
+
+?>
 
 	 <div class="container-xxl flex-grow-1 container-p-y">
 
@@ -17,15 +27,15 @@
                         <div class="row g-2">
                           <div class="col-sm-3 mb-3">
                             <label class="form-label">Barcode</label>
-                            <input type="text" id="c_barcode" class="form-control" name="supplier" placeholder="Barcode">
+                            <input type="text" id="c_barcode" class="form-control" name="supplier" placeholder="Barcode" autofocus>
                           </div>                         
                           <div class="col-sm-3 mb-3">
                             <label class="form-label">Branch</label>
                             <select class="form-select" name="purchase_type">
-                              <option selected="">Atlantic Arthur</option>
-                              <option value="1">One</option>
-                              <option value="2">Two</option>
-                              <option value="3">Three</option>
+                              <?php $data = get_branch($con); while($row = mysqli_fetch_assoc($data)) { ?>
+                              <option value="<?php echo $row['b_id']; ?>" <?php if ($_SESSION['branch']==$row['b_id']) { echo "selected"; }else{ echo "disabled"; } ?>><?php echo $row['b_name']; ?></option>
+                            <?php } ?>
+
                             </select>
                           </div>
                           <div class="col-sm-2 mb-3">
@@ -47,8 +57,7 @@
                               </div>
                           </div>
                         </div>
-                         <hr >
-
+                         <hr >  
                         <div class="row">
                           <div class="col-sm-1 mb-3">
                             <label class="form-label">No</label>
@@ -93,7 +102,10 @@
                           <div class="col-sm-2 mb-3">
                             <label class="form-label">Amount</label>
                             <input type="text" class="form-control" placeholder="Amount" name="sell_s" id="amount">
-                          </div>                          
+                          </div> 
+                          <div class="col-12 text-center">
+                            <button type="submit" value="Send" class="btn btn-primary">Save</button>
+                          </div>                         
                         </div>
                         <div class="row">
                           <div class="col-md-6 p-3">
@@ -175,7 +187,7 @@
                           </div>
                         </div>
                          <div class="col-12 text-center">
-                            <button type="submit" value="Send" class="btn btn-primary">Send</button>
+                            <button type="submit" value="Send" class="btn btn-primary">Place Order</button>
                           </div>
                       </form>
                     </div>

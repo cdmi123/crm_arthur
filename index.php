@@ -22,6 +22,8 @@ $b_data = mysqli_query($con,$sql_select_branch);
           $row = mysqli_fetch_assoc($login_data);
           $_SESSION['login_user_id'] = $row['a_id'];
           $_SESSION['login_user_name'] = $row['username'];
+          $_SESSION['branch'] = $row['branch_id'];
+
           header('location:dashboard.php');
       }
 
